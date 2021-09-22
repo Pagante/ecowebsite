@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-conten padding-y bg">
+
+    <div class="container">
+        <div class="row">
+            {% include 'includes/dashboardsidebar.html' %}
+            <main class="col-md-9">
+                <article class="card">
+                    <header class="card-header">
+                        <strong class="d-inline-block mr-3">Order ID: 6123456789</strong>
+                        <span>Order Date: 16 December 2018</span>
+                    </header>
+                    <div class="card-body">
+                        <div class="row">
+                            
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card text-center">
+                                            <div class="card-body">
+                                                <div class="card-title">
+                                                    <h5>Total Orders</h5>
+                                                    <h4>{{ order_count }}</h4>
+                                                    <a href="{% url 'accounts:my_orders' %}">View Orders</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card text-center">
+                                            <div class="card-body">
+                                                <img class="card-img avatar" src="{{ userprofile.profile_picture.url }}" alt="Profile Pic">
+                                                <p class="mb-0">{{ user.email }}</p>
+                                                <p>{{ user.phone_number }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- row.// -->
+                            </div> <!-- card-body .// -->
+                        </div> <!-- row.// -->
+                    </div> <!-- card-body .// -->
+                    
+
+                </article> <!-- order-group.// -->
+            </main>
+        </div> <!-- row.// -->
+    </div>
+
+
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+{% endblock %}
